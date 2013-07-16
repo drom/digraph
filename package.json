@@ -6,7 +6,7 @@
   "author"      : "Aliaksei Chapyzhenka",
   "license"     : "MIT",
   "scripts" : {
-    "test"  : "echo \"Error: no test specified\" && exit 1"
+    "test"  : "npm run digraph"
   },
   "repository"  : {
     "type"  : "git",
