@@ -1,0 +1,18 @@
+{
+  "name"        : "digraph",
+  "version"     : "0.0.0",
+  "description" : "Directed graph library",
+  "main"        : "digraph.js",
+  "author"      : "Aliaksei Chapyzhenka",
+  "license"     : "MIT",
+  "scripts" : {
+    "test"  : "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository"  : {
+    "type"  : "git",
+    "url"   : "https://github.com/drom/digraph.git"
+  },
+  "bugs" : {
+    "url"   : "https://github.com/drom/digraph/issues"
+  }
+}
