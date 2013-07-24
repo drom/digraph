@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <title>digraph test</title>
+ </head>
+ <body>
+  <script type="text/javascript" src="scripts/digraph.js"></script>
+  <script type="text/javascript">
+    var g = digraph();
+    g.add('a');   // new node
+    g.add('a b'); // new edge
+
+    g.add({a:{label:'a_label'}});           // new node attributes
+    g.add({'a b':{label:'a_b_label'}});     // new edge attributes
+
+    g.add(['a', 'b', 'c']);
+    g.add(['a b', 'b c']);
+
+    g.add([['a    b'], ['b   c']]);
+    g.add(true);
+    g.add(new Date);
+    g.add(1);
+    console.log(g.node_indx, g.node_attr, g.edge_attr);
+  </script>
+ </body>
+</html>
