@@ -6,6 +6,41 @@ var digraph = digraph || function () {
 		edge_toto  : [], // [{}, {0:true}, {0:true,1:true}]
 		node_attr  : [], // [{}, {}, {}]
 	};
+	function edges () {
+		var e = [];
+		return e;
+	};
+	function vertices () {
+		var v = [];
+		return v;
+	};
+	function in_degree (v) {
+		var vindex, edges, degree;
+		vindex = (g.node_indx[v])|0;
+		edges  = g.edge_from [vindex];
+		degree = (Object.keys(edges).length)|0;
+		return degree;
+	};
+	function out_degree (v) {
+		var vindex, edges, degree;
+		vindex = (g.node_indx[v])|0;
+		edges  = g.edge_toto [vindex];
+		degree = (Object.keys(edges).length)|0;
+		return degree;
+	};
+	function edges_at (v) {
+		var edges = [];
+		return edges;
+	};
+	function get_vertex_attribute (v, label) {
+		var a = '';
+		return a;
+	};
+	function get_edge_attribute (e, label) {
+		var e = 'e';
+		return a;
+	};
+
 	function has_node (name) {
 		return g.node_indx[name] !== undefined || false;
 	};
