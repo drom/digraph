@@ -1,3 +1,6 @@
+/* jshint camelcase: false, bitwise: false */
+'use strict';
+
 var digraph = digraph || {
 	random: function () {
 		this.node_indx = {a:0, b:1, c:2};
@@ -38,29 +41,29 @@ var digraph = digraph || {
 		return res;
 	},
 	edges_at: function (v) {
-		var edges = [];
+		var edges = v;
 		return edges;
 	},
 	get_vertex_attribute: function (v, label) {
-		var a = '';
+		var a = [v,label];
 		return a;
 	},
 	get_edge_attribute: function (e, label) {
-		var e = 'e';
+		var a = [e,label];
 		return a;
 	},
 	has_node: function (name) {
-		return g.node_indx[name] !== undefined || false;
+		return this.node_indx[name] !== undefined || false;
 	},
 	has_edge: function (nn) {
 		var a, b;
-		if (a = this.edge_from[nn[0]] === undefined) { return false; };
-		if (b = a[nn[1]] === undefined) { return false; }
+		if ((a = this.edge_from[nn[0]]) === undefined) { return false; }
+		if ((b = a[nn[1]]) === undefined) { return false; }
 		return b;
 	},
 	add_node: function (name) {
 		var i;
-		if (!has_node(name)) {
+		if (!this.has_node(name)) {
 			i = this.node_count++;
 			this.node_indx[name] = i;
 			this.node_attr[i] = {};
@@ -69,10 +72,10 @@ var digraph = digraph || {
 	},
 	add_edge: function (aname) {
 		var fr, to;
-		aname.forEach(add_node);
+		aname.forEach(this.add_node);
 		fr = this.node_indx[aname[0]];
 		to = this.node_indx[aname[1]];
-		if (!has_edge([fr, to])) {
+		if (!this.has_edge([fr, to])) {
 			this.edge_from[fr] = this.edge_from[fr] || {};
 			this.edge_from[fr][to] = {};
 			this.edge_toto[to] = this.edge_toto[to] || {};
@@ -85,15 +88,15 @@ var digraph = digraph || {
 		obj += '';
 		name = obj.split(/ +/);
 		if (name.length === 1) {
-			add_node(name[0]);
+			this.add_node(name[0]);
 		} else {
-			add_edge(name);
+			this.add_edge(name);
 		}
 	},
 	add_attr: function (obj) {
 		var e;
 		for (e in obj) {
-			add_obj(e);
+			this.add_obj(e);
 			console.log('Attr: ', e, obj[e]);
 		}
 	},
@@ -102,26 +105,36 @@ var digraph = digraph || {
 		if (typeof obj === 'object') {
 			otype = Object.prototype.toString.call(obj);
 			if (otype === '[object Object]') {
-				add_attr(obj);
+				this.add_attr(obj);
 			} else if (otype === '[object Array]') {
-				obj.forEach(single_add);
+				obj.forEach(this.single_add);
 			} else {
 				console.log('Error: can not add: ', otype, obj);
 			}
 			return;
 		}
-		add_obj(obj);
+		this.add_obj(obj);
 	},
 	add: function (obj) {
 		if (Object.prototype.toString.call(obj) === '[object Array]') {
-			obj.forEach(single_add);
+			obj.forEach(this.single_add);
 			return;
 		}
-		return single_add(obj);
-	}
-}
+		return this.single_add(obj);
+	},
+	write: function () {
+		var vs, i, ilen, ret = [];
 
-module.exports = function (obj) {
+		vs = this.vertices ();
+		ilen = vs.length;
+		for (i = 0; i < ilen; i++) {
+			ret.push ([vs[i]]);
+		}
+		return ret;
+	}
+};
+
+module.exports = function () {
 	return {
 		node_count: 0,
 		node_indx:  {},
@@ -133,6 +146,7 @@ module.exports = function (obj) {
 		edges:      digraph.edges,
 		in_degree:  digraph.in_degree,
 		out_degree: digraph.out_degree,
-		add:        digraph.add
+		add:        digraph.add,
+		write:      digraph.write
 	};
-}
+};
