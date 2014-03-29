@@ -57,4 +57,4 @@ Returns array of __vertex__ names: ``['a', 'b', 'c']``
 ### ``var e = g.edges ();``
 Returns array of __edge__s: ``[['a', 'b'], ['b', 'c']]``
 
-[![Build Status](https://travis-ci.org/drom/digraph.png?branch=master)](https://travis-ci.org/drom/digraph)
+[![Build Status](https://travis-ci.org/drom/digraph.svg?branch=master)](https://travis-ci.org/drom/digraph)
