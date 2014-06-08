@@ -58,3 +58,5 @@ Returns array of __vertex__ names: ``['a', 'b', 'c']``
 Returns array of __edge__s: ``[['a', 'b'], ['b', 'c']]``
 
 [![Build Status](https://travis-ci.org/drom/digraph.svg?branch=master)](https://travis-ci.org/drom/digraph)
+[![NPM version](https://img.shields.io/npm/v/digraph.svg)](https://www.npmjs.org/package/digraph)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
