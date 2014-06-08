@@ -1,8 +1,8 @@
 /* jshint camelcase: false, bitwise: false */
-'use strict';
 
 var digraph = digraph || {
 	random: function () {
+		'use strict';
 		this.v.count   = 4;
 		this.v.id      = {'a':0, 'b':1, 'c':2, 'd':3};
 		this.v.name    = {0:'a', 1:'b', 2:'c', 3:'d'};

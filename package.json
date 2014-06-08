@@ -1,12 +1,22 @@
 {
   "name"        : "digraph",
-  "version"     : "0.0.4",
+  "version"     : "0.0.5",
   "description" : "Directed graph library",
   "main"        : "digraph.js",
   "author"      : "Aliaksei Chapyzhenka",
   "license"     : "MIT",
   "scripts" : {
     "test"  : "npm run digraph"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "grunt":                "*",
+    "grunt-cli":            "*",
+    "jshint":               "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-clean":  "*",
+    "grunt-mocha-test":     "*"
   },
   "repository"  : {
     "type"  : "git",
