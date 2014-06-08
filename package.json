@@ -6,7 +6,7 @@
   "author"      : "Aliaksei Chapyzhenka",
   "license"     : "MIT",
   "scripts" : {
-    "test"  : "npm run digraph"
+    "test"  : "grunt"
   },
   "devDependencies": {
     "chai": "*",
