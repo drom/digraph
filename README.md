@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/drom/digraph.svg?branch=master)](https://travis-ci.org/drom/digraph)
 [![NPM version](https://img.shields.io/npm/v/digraph.svg)](https://www.npmjs.org/package/digraph)
+[![Build Status](https://travis-ci.org/drom/digraph.svg?branch=master)](https://travis-ci.org/drom/digraph)
+[![Build status](https://ci.appveyor.com/api/projects/status/c3yx0nrd8nuanbyh?svg=true)](https://ci.appveyor.com/project/drom/digraph)
 
 # digraph
 
