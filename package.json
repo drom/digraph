@@ -6,7 +6,7 @@
   "author": "Aliaksei Chapyzhenka",
   "license": "MIT",
   "scripts": {
-    "test": "eslint lib/*.js test/*.js && istanbul cover ./node_modules/.bin/_mocha test"
+    "test": "eslint lib/*.js test/*.js && istanbul cover ./node_modules/mocha/bin/_mocha test"
   },
   "devDependencies": {
     "chai": "^3.4.1",
