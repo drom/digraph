@@ -32,4 +32,6 @@ Use browserify.
 
 ### g.get.out.edges(node)
 
-### g.dump()
+### g.export.obj()
+
+### g.export.dot()
