@@ -1,28 +1,24 @@
 {
-  "name"        : "digraph",
-  "version"     : "0.0.5",
-  "description" : "Directed graph library",
-  "main"        : "digraph.js",
-  "author"      : "Aliaksei Chapyzhenka",
-  "license"     : "MIT",
-  "scripts" : {
-    "test"  : "grunt"
+  "name": "digraph",
+  "version": "0.0.5",
+  "description": "Directed graph library",
+  "main": "digraph.js",
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
+  "scripts": {
+    "test": "eslint lib/*.js test/*.js && istanbul cover _mocha test"
   },
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*",
-    "grunt":                "*",
-    "grunt-cli":            "*",
-    "jshint":               "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-clean":  "*",
-    "grunt-mocha-test":     "*"
+    "chai": "^3.4.1",
+    "eslint": "^1.10.3",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
   },
-  "repository"  : {
-    "type"  : "git",
-    "url"   : "https://github.com/drom/digraph.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drom/digraph.git"
   },
-  "bugs" : {
-    "url"   : "https://github.com/drom/digraph/issues"
+  "bugs": {
+    "url": "https://github.com/drom/digraph/issues"
   }
 }
