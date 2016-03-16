@@ -2,7 +2,7 @@
   "name": "digraph",
   "version": "0.1.3",
   "description": "Directed graph library",
-  "main": "digraph.js",
+  "main": "lib/",
   "author": "Aliaksei Chapyzhenka",
   "license": "MIT",
   "scripts": {
