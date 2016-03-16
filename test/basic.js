@@ -10,10 +10,10 @@ describe ('digraph', function () {
         g1 = digraph();
         a = g1.add.node();
         b = g1.add.node();
-        c = g1.add.node(); c.id = 'c';
+        c = g1.add.node(); c.label = 'c', c.color = 'blue';
         d = g1.add.node();
         g1.add.edge(a, b);
-        g1.add.edge(b, c);
+        var b_c = g1.add.edge(b, c); b_c.taillabel = 0;
         g1.add.edge(c, a);
         g1.add.edge(b, d);
     });
@@ -41,12 +41,12 @@ describe ('digraph', function () {
     it ('dump digraph', function () {
         expect(g1.export.obj()).to.deep.equal({
             edges: [[0, 1, {}], [1, 2, {}], [2, 0, {}], [1, 3, {}]],
-            nodes: [{}, {}, {id:'c'}, {}]
+            nodes: [{}, {}, {label:'c', color: 'blue'}, {}]
         });
     });
 
     it ('export dot', function () {
-        expect(g1.export.dot()).to.equal('digraph {\n  _0 -> _1\n  _1 -> c\n  c -> _0\n  _1 -> _3\n}\n');
+        expect(g1.export.dot()).to.equal('digraph {\n  _2 [label = c, color = blue]\n  _0 -> _1\n  _1 -> _2\n  _2 -> _0\n  _1 -> _3\n}\n');
     });
 
 });
