@@ -20,18 +20,6 @@ Use browserify.
 
 ## API
 
-### g.add.node(attr)
+### g.add.node(<node>)
 
-### g.add.edge(attr)
-
-### g.get.nodes()
-
-### g.get.edges()
-
-### g.get.in.edges(node)
-
-### g.get.out.edges(node)
-
-### g.export.obj()
-
-### g.export.dot()
+### g.add.edge.from(<node>).to(<node>)

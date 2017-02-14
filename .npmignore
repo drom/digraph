@@ -1,5 +1,8 @@
-node_modules
-coverage
-test
-old
+.nyc_output
+.travis.yml
 appveyor.yml
+coverage
+doc
+node_modules
+old
+test
