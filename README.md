@@ -20,25 +20,66 @@ Use browserify.
 
 ## API
 
-### node = g.add.node(`Node`)
+```js
+<Node> = g.node(<N>)
+```
 
 Adds new node object if needed.
 
-### edge = g.add.edge.from(`Node`).to(`Node`)
+```js
+<Edge> = g.edge(<N>)(<N>)
+```
 
 Adds new edge and nodes if needed.
 
----
+----
 
-`Node: undefined`
+`N: undefined`
 
 Constructs new noname node object.
 
-`Node: {String}`
+`N: {String}`
 
 Search for existing node object with this name.
 Constructs new node object with the name if cant find existing node.
 
-`Node: {Object}`
+`N: {Object}`
 
 Uses provided `Object` as node object descriptor.
+
+----
+
+### .has
+
+### .edges
+
+```js
+[<Edge>] = g.edges.from(<Node>)
+```
+
+Return array of all outgoing edges.
+
+```js
+[<Edge>] = g.edges.to(<Node>)
+```
+
+Return array of all incoming edges.
+
+```js
+[<Edge>] = g.edges.at(<Node>)
+```
+
+### .get
+
+
+```js
+[<Node>] = g.get.nodes
+```
+
+Return array of nodes in no particular order.
+
+```js
+[<Edge>] = g.get.edges
+```
+
+Return array of edges in no particular order.

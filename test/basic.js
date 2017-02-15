@@ -8,14 +8,14 @@ describe ('digraph', function () {
 
     beforeEach (function () {
         g1 = digraph();
-        a = g1.add.node('a');
-        b = g1.add.node({ name: 'b' });
-        c = g1.add.node(); c.label = 'c', c.color = 'blue';
-        d = g1.add.node();
-        g1.add.edge.from(a).to(b);
-        var b_c = g1.add.edge.from(b).to(c); b_c.taillabel = 0;
-        g1.add.edge.from(c).to(a);
-        g1.add.edge.from(b).to(d);
+        a = g1.node('a');
+        b = g1.node({ name: 'b' });
+        c = g1.node(); c.label = 'c', c.color = 'blue';
+        d = g1.node();
+        g1.edge(a)(b);
+        var b_c = g1.edge(b)(c); b_c.taillabel = 0;
+        g1.edge(c)(a);
+        g1.edge(b)(d);
     });
 
     it ('count edges', function () {
@@ -43,7 +43,7 @@ describe ('digraph', function () {
     });
 
     it ('added the same edge again', function () {
-        g1.add.edge.from(a).to(b);
+        g1.edge(a)(b);
         expect(g1.get.edges.length).to.equal(4);
     });
 
