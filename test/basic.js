@@ -19,36 +19,33 @@ describe ('digraph', function () {
     });
 
     it ('count edges', function () {
-        expect(g1.edges.length).to.equal(4);
+        expect(g1.get.edges.length).to.equal(4);
     });
 
     it ('count nodes', function () {
-        expect(g1.nodes.length).to.equal(4);
+        expect(g1.get.nodes.length).to.equal(4);
     });
 
-/*
-    it ('in degree 1', function () {
-        expect(g1.get.in.edges(a).length).to.equal(1);
+    it ('in degree of a', function () {
+        expect(a.edges.from.length).to.equal(1);
     });
 
-
-    it ('out degree 0', function () {
-        expect(g1.get.out.edges(d).length).to.equal(0);
+    it ('in degree of a (bis)', function () {
+        expect(g1.edges.from(a).length).to.equal(1);
     });
 
-    it ('out degree 2', function () {
-        expect(g1.get.out.edges(b).length).to.equal(2);
+    it ('out degree of b', function () {
+        expect(d.edges.to.length).to.equal(0);
     });
 
-    it ('dump digraph', function () {
-        expect(g1.export.obj()).to.deep.equal({
-            edges: [[0, 1, {}], [1, 2, {}], [2, 0, {}], [1, 3, {}]],
-            nodes: [{}, {}, {label:'c', color: 'blue'}, {}]
-        });
+    it ('out degree of b (bis)', function () {
+        expect(g1.edges.to(b).length).to.equal(2);
     });
 
-    it ('export dot', function () {
-        expect(g1.export.dot()).to.equal('digraph {\n  _2 [label = c, color = blue]\n  _0 -> _1\n  _1 -> _2\n  _2 -> _0\n  _1 -> _3\n}\n');
+    it ('added the same edge again', function () {
+        g1.add.edge.from(a).to(b);
+        expect(g1.get.edges.length).to.equal(4);
     });
-*/
+
 });
+/* eslint-env mocha */

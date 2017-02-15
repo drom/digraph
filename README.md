@@ -20,6 +20,25 @@ Use browserify.
 
 ## API
 
-### g.add.node(<node>)
+### node = g.add.node(`Node`)
 
-### g.add.edge.from(<node>).to(<node>)
+Adds new node object if needed.
+
+### edge = g.add.edge.from(`Node`).to(`Node`)
+
+Adds new edge and nodes if needed.
+
+---
+
+`Node: undefined`
+
+Constructs new noname node object.
+
+`Node: {String}`
+
+Search for existing node object with this name.
+Constructs new node object with the name if cant find existing node.
+
+`Node: {Object}`
+
+Uses provided `Object` as node object descriptor.
