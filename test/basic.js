@@ -12,10 +12,10 @@ describe ('digraph', function () {
         b = g1.node({ name: 'b' });
         c = g1.node(); c.label = 'c', c.color = 'blue';
         d = g1.node();
-        g1.edge(a)(b);
-        var b_c = g1.edge(b)(c); b_c.taillabel = 0;
-        g1.edge(c)(a);
-        g1.edge(b)(d);
+        a.edge(b);
+        var b_c = b.edge(c); b_c.taillabel = 0;
+        c.edge(a);
+        b.edge(d);
     });
 
     it ('count edges', function () {
@@ -43,7 +43,7 @@ describe ('digraph', function () {
     });
 
     it ('added the same edge again', function () {
-        g1.edge(a)(b);
+        a.edge(b);
         expect(g1.get.edges.length).to.equal(4);
     });
 

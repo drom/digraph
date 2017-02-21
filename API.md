@@ -1,5 +1,6 @@
 # API
 
+
 ## Rtype
 
 Using [Rtype](https://github.com/ericelliott/rtype) interface notation.

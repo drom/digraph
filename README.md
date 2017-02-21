@@ -10,8 +10,7 @@ in JavaScript.
 
 ## node.js
 ```js
-var digraph = require('digraph');
-var g = digraph();
+npm i digraph --save
 ```
 
 ## browser
@@ -21,18 +20,24 @@ Use browserify.
 ## API
 
 ```js
-<Node> = g.node(<N>)
+var digraph = require('digraph');
 ```
 
-Adds new node object if needed.
+`digraph` is a factory function creates directed graph object.
 
 ```js
-<Edge> = g.edge(<N>)(<N>)
+var g1 = digraph();
 ```
 
-Adds new edge and nodes if needed.
+### `g.node() -> n`
 
-----
+Digraph object has `node` factory function.
+
+```js
+<Node> = g1.node(<N>)
+```
+
+Creates new node object if needed.
 
 `N: undefined`
 
@@ -41,35 +46,57 @@ Constructs new noname node object.
 `N: {String}`
 
 Search for existing node object with this name.
-Constructs new node object with the name if cant find existing node.
+Constructs new node object with the name if can`t find existing node.
 
 `N: {Object}`
 
-Uses provided `Object` as node object descriptor.
+Uses provided `Object` as node object descriptor. Search for existing node object if `name: 'NodeName'` is provided.
 
-----
-
-### .has
-
-### .edges
+#### Examples:
 
 ```js
-[<Edge>] = g.edges.from(<Node>)
+var a = g1.node('a');
+
+var node = g1.node; // can be detached
+
+var b = node('b');
+var c = node('c');
+```
+
+### `n.edge(n) -> e`
+
+Node object has `edge` factory that will search for the relevant edge or create one if needed.
+
+#### Examples:
+
+```js
+var a_b = a.edge(b);
+var b_e = node('b').edge(node('e'));
+
+var c_ = c.edge; // can be detached
+var c_d = c_(d);
+var c_e = c_(e);
+```
+
+### `g.edges`
+
+```js
+[<Edge>] = g1.edges.from(<Node>)
 ```
 
 Return array of all outgoing edges.
 
 ```js
-[<Edge>] = g.edges.to(<Node>)
+[<Edge>] = g1.edges.to(<Node>)
 ```
 
 Return array of all incoming edges.
 
 ```js
-[<Edge>] = g.edges.at(<Node>)
+[<Edge>] = g1.edges.at(<Node>)
 ```
 
-### .get
+### `g.get`
 
 
 ```js
