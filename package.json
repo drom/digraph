@@ -1,6 +1,6 @@
 {
   "name": "digraph",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Directed graph library",
   "main": "lib/",
   "author": "Aliaksei Chapyzhenka",
