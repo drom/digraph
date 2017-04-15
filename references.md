@@ -7,3 +7,5 @@ that produces graphs with small-world properties, including short [average path]
 ## Layout
 
 https://en.wikipedia.org/wiki/Circular_layout
+
+https://en.wikipedia.org/wiki/Poincar%C3%A9_disk_model
