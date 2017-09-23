@@ -23,5 +23,6 @@
   },
   "bugs": {
     "url": "https://github.com/drom/digraph/issues"
-  }
+  },
+  "dependencies": {}
 }
