@@ -12,10 +12,11 @@ var genConnector = function (gState, nState, eState) {
 };
 
 var genEdge = function (gState, nState) {
-    return function perEdge () {
+    return function perEdge (label) {
         var eState = {
             source: { node: nState, index: nState.to.length },
-            targets: []
+            targets: [],
+            label: label
         };
         nState.to.push(eState);
         gState.edges.push(eState);
@@ -26,8 +27,8 @@ var genEdge = function (gState, nState) {
 };
 
 var genNode = function (gState) {
-    return function perNode () {
-        var nState = {from: [], to: []};
+    return function perNode (label) {
+        var nState = {from: [], to: [], label: label};
         gState.nodes.push(nState);
         var res = genEdge(gState, nState);
         res.state = nState;
