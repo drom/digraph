@@ -2,8 +2,11 @@
 /* Graph, Directed, Hypergraph, F-edges */
 
 var genConnector = function (gState, nState, eState) {
-    return function perTarget (n) {
-        eState.targets.push({ node: n.state, index: 0 }); // TODO real index
+    return function perTarget (nn) {
+        var nnState = nn.state;
+        var nnFrom = nnState.from;
+        eState.targets.push({ node: nnState, index: nnFrom.length });
+        nnFrom.push(eState);
         return perTarget;
     };
 };
