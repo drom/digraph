@@ -16,7 +16,8 @@ var genEdge = function (gState, nState) {
         var eState = {
             source: { node: nState, index: nState.to.length },
             targets: [],
-            label: label
+            label: label,
+            root: gState
         };
         nState.to.push(eState);
         gState.edges.push(eState);
@@ -28,7 +29,12 @@ var genEdge = function (gState, nState) {
 
 var genNode = function (gState) {
     return function perNode (label) {
-        var nState = {from: [], to: [], label: label, root: gState};
+        var nState = {
+            from: [],
+            to: [],
+            label: label,
+            root: gState
+        };
         gState.nodes.push(nState);
         var res = genEdge(gState, nState);
         res.state = nState;
