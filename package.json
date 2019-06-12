@@ -6,9 +6,9 @@
   "author": "Aliaksei Chapyzhenka",
   "license": "MIT",
   "scripts": {
-    "test": "eslint lib/*.js && nyc --reporter=html --reporter=text mocha test",
+    "test": "eslint lib/*.js && nyc -r=lcov -r=text mocha test",
     "mocha": "mocha test",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report -r=text-lcov | coveralls"
   },
   "devDependencies": {
     "@drom/eslint-config": "^0.10.0",
